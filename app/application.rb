@@ -1,5 +1,7 @@
 class Application
 
+  t = Time.now
+
   def call(env)
     resp = Rack::Response.new
 
@@ -13,8 +15,6 @@ class Application
   end
 
   def time
-    t = Time.now
-
     if t.min < 10
       time_now = "#{t.hour}:0#{t.min}"
     else
