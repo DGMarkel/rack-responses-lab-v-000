@@ -2,6 +2,15 @@ class Application
 
   t = Time.now
 
+  def time
+    if t.min < 10
+      time_now = "#{t.hour}:0#{t.min}"
+    else
+      time_now = "#{t.hour}:#{t.min}"
+    end
+    "The time is now #{time_now}"
+  end
+
   def call(env)
     resp = Rack::Response.new
 
@@ -14,13 +23,5 @@ class Application
     resp.finish
   end
 
-  def time
-    if t.min < 10
-      time_now = "#{t.hour}:0#{t.min}"
-    else
-      time_now = "#{t.hour}:#{t.min}"
-    end
-    "The time is now #{time_now}"
-  end
 
 end
