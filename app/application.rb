@@ -13,14 +13,14 @@ class Application
   end
 
   def time
-  t = Time.now
+    t = Time.now
 
-  if t.min < 10
-    time_now = "#{t.hour}:0#{t.min}"
-  else
-    time_now = "#{t.hour}:#{t.min}"
+    if t.min < 10
+      time_now = "#{t.hour}:0#{t.min}"
+    else
+      time_now = "#{t.hour}:#{t.min}"
+    end
+    "The time is now #{time_now}"
   end
-
-  t_statement = "The time is now #{time_now}"
 
 end
